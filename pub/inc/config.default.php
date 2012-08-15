@@ -17,23 +17,10 @@
  * along with Zirafe. If not, see <http://www.gnu.org/licenses/>.
  */
 
-if(!defined("IN_ZIRAFE"))
-{
-	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_ZIRAFE is defined.");
-}
-
-if(!defined('ZIRAFE_ROOT'))
-{
-	define('ZIRAFE_ROOT', dirname(dirname(__FILE__))."/");
-}
-
-require_once ZIRAFE_ROOT."inc/functions.php";
-
-if(!file_exists(ZIRAFE_ROOT."inc/config.php"))
-{
-	header("Location: install.php");
-	exit;
-}
-
-require_once ZIRAFE_ROOT."inc/config.php";
-require_once ZIRAFE_ROOT."inc/settings.php";
+// don't forget the ending '/'
+$cfg['web_root'] = 'http://localhost/';
+$cfg['var_root'] = '/var/zirafe/'; // mkdir -p /var/zirafe/files /var/zirafe/links /var/zirafe/trash
+$cfg['lang'] = 'fr_FR.UTF-8';
+$cfg['style'] = 'default';
+$cfg['rewrite'] = true;
+$cfg['password'] = '';
