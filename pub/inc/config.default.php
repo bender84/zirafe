@@ -19,8 +19,10 @@
 
 // don't forget the ending '/'
 $cfg['web_root'] = 'http://localhost/';
-$cfg['var_root'] = '/var/zirafe/'; // mkdir -p /var/zirafe/files /var/zirafe/links /var/zirafe/trash
-$cfg['lang'] = 'fr_FR.UTF-8';
-$cfg['style'] = 'default';
-$cfg['rewrite'] = true;
-$cfg['password'] = '';
+$cfg['var_root'] = '/var/zirafe/'; // mkdir -p /var/zirafe/{files,links,trash} && chown -R www-data /var/zirafe/
+$cfg['retention'] = array(
+	'42 minutes' => 2520,
+	'42 heures' => 151200,
+	'42 jours' => 3628800,
+);
+$cfg['default_retention'] = '42 heures';
