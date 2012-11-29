@@ -27,11 +27,8 @@ $res = array();
 if($writable)
 {
 	$key = '';
-	$time = time();
-	$time += ZIRAFE_42HOURS;
-	$fr_time = "42 heures";
-
-	$res = zirafe_upload($_FILES['file'], isset($_POST['one_time_download']), $key, $time, $cfg);
+	$best_before = time() + date_to_seconds($cfg['default_expiration_time_config']);
+	$res = zirafe_upload($_FILES['file'], isset($_POST['one_time_download']), $key, $best_before, $cfg);
 }
 
 /* Checking for errors. */
