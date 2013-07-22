@@ -174,12 +174,13 @@ if(!has_error () && $writable)
 ?>
 
 <div id="upload">
-<form enctype="multipart/form-data" name="zirafe_form" action="<?php echo $cfg['web_root']; ?>" method="post">
+<form enctype="multipart/form-data" onsubmit="DoSubmit();" name="zirafe_form" action="<?php echo $cfg['web_root']; ?>" method="post">
 <div><input type="hidden" name="zirafe" value="<?php $_42 = rand(); echo md5($_42); ?>" /></div>
 	<div><span class="title"><?php echo _('Envoyer un '); if($writable && isset($_POST['zirafe'])) { echo _('autre '); } echo _('fichier'); ?></span></div>
 	<p><input size="15" type="file" name="file" /></p>
 	<p class="config"><?php printf(_('Taille maximum : %dMB'), zirafe_get_max_upload_size()/(1024*1024)); ?></p>
-	<p><button onclick="document.forms['zirafe_form']['submit'].innerHTML = 'Envoi en cours...';document.forms['zirafe_form']['submit'].disabled=true;" name="submit" type="submit">Envoyer</button></p>
+	<p id="submit-btn"><input name="submit" type="submit" value="Envoyer"/></p>
+	<p id="submit-loader" style="display:none;"><img src="./media/loader.gif"/></p>
 
 	<hr />
 	<p><label for="expiration"><?php echo _('Limite de disponibilité'); ?></label>
