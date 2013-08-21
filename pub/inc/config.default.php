@@ -22,3 +22,6 @@ $cfg['web_root'] = 'http://localhost/';
 $cfg['var_root'] = '/var/zirafe/'; // mkdir -p /var/zirafe/{files,links,trash} && chown -R www-data /var/zirafe/
 $cfg['expiration_time_config'] = array('42i', '42h', '42d');
 $cfg['default_expiration_time_config'] = '42h';
+
+// useful for piwik-like system
+$cfg['extra_html'] = '';

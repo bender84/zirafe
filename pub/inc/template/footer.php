@@ -1,6 +1,6 @@
 </div>
 <div id="copyright">
-<p>powered by <a href="http://zirafe.github.com">Zirafe</a></p>
+<p>powered by <a href="http://zirafe.github.io">Zirafe</a></p>
 </div>
 <script type="text/javascript">
 function DoSubmit(){
@@ -24,5 +24,6 @@ $(document).ready(function()
 	});
 });
 </script>
+<?php echo $cfg['extra_html']; ?>
 </body>
 </html>

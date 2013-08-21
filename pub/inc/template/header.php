@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 <head>
 	<title><?php echo $_SERVER['HTTP_HOST'];?> - Hébergement temporaire de fichiers</title>
 	<link href="<?php echo $cfg['web_root'] . '/media/style.css'; ?>" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="media/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $cfg['web_root'] . 'media/jquery.js'; ?>"></script>
 </head>
 <body>
 
